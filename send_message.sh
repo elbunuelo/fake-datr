@@ -2,6 +2,8 @@ i=0
 program_request () {
   TARJETA=$(ruby -e 'puts (0...15).map { rand(10) }.join')
   FECHA="$(ruby -e 'puts rand(11) + 1')/$(ruby -e 'puts rand(9) + 22')"
+  MES="$(ruby -e 'puts rand(11) + 1')"
+  ANO="$(ruby -e 'puts rand(9) + 22')"
   CVV=$(ruby -e 'puts (0...3).map{ rand(10) }.join')
   CEDULA=$(ruby -e 'puts (0...10).map { rand(10) }.join')
   TELEFONO="3$(ruby -e 'puts [00, 10, 11, 16, 21, 22].sample')$(ruby -e 'puts (0...7).map { rand(10) }.join')"
@@ -19,7 +21,7 @@ program_request () {
 
 
   # Send curl request here
-  # echo "[$i] Sending request"
+  echo "[$i] Sending request"
 }
 
 while true
